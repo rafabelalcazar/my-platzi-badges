@@ -13,17 +13,21 @@ class BadgeForm extends Component {
         console.log('Clicked')
     }
 
+    handleSubmit = e => {
+        e.preventDefault()
+    }
+
 
     render() {
         return (
             <div>
                 <h1>New Attendand</h1>
-                <form>
+                <form onSubmit={this.handleSubmit}>
                     <div className="form-group">
                         <label>First Name</label>
                         <input onChange={this.handleChange} className='form-control' type="text" name='firstName' />
                     </div>
-                    <button type='button' onClick={this.handleClick} className='btn btn-primary'>Save</button>
+                    <button type='submit' onClick={this.handleClick} className='btn btn-primary'>Save</button>
                 </form>
             </div>
         );
